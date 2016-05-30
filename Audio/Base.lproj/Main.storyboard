@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Audio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,63 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCq-zu-ljQ">
+                                <rect key="frame" x="279" y="450" width="42" height="30"/>
+                                <state key="normal" title="Pause">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="PausePlay:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rMv-HL-rHw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCn-6w-mcf">
+                                <rect key="frame" x="363" y="450" width="50" height="30"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Restart:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mRF-Du-8yH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntS-u8-YzB">
+                                <rect key="frame" x="178" y="450" width="32" height="30"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Stop:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dnn-Vk-Cmq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJv-i2-csa">
+                                <rect key="frame" x="264" y="56" width="72" height="30"/>
+                                <state key="normal" title="Play Audio">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="PlayAudio1:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FlX-Q1-HfV"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="nCq-zu-ljQ" secondAttribute="centerX" id="7Ce-kv-TQf"/>
+                            <constraint firstAttribute="centerX" secondItem="ntS-u8-YzB" secondAttribute="centerX" constant="106" id="AvO-tE-uOB"/>
+                            <constraint firstAttribute="centerY" secondItem="nCq-zu-ljQ" secondAttribute="centerY" constant="-165" id="Df8-Ly-0Oj"/>
+                            <constraint firstAttribute="centerX" secondItem="cJv-i2-csa" secondAttribute="centerX" id="HUO-43-Pdt"/>
+                            <constraint firstAttribute="centerY" secondItem="KCn-6w-mcf" secondAttribute="centerY" constant="-165" id="ebE-TY-v2A"/>
+                            <constraint firstAttribute="centerX" secondItem="KCn-6w-mcf" secondAttribute="centerX" constant="-88" id="fuQ-Ll-duQ"/>
+                            <constraint firstAttribute="centerY" secondItem="cJv-i2-csa" secondAttribute="centerY" constant="229" id="mqA-Di-ve7"/>
+                            <constraint firstAttribute="centerY" secondItem="ntS-u8-YzB" secondAttribute="centerY" constant="-165" id="y7S-Ws-ugL"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="PausePlay" destination="nCq-zu-ljQ" id="zQY-GI-Rqu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="359" y="518"/>
         </scene>
     </scenes>
 </document>
